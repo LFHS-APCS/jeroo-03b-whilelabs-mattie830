@@ -77,32 +77,19 @@ while (!isFacing(NORTH)){
      * The Jeroo should stop as soon as there is a net in front of it.       
      */
     public void meander() {
-while (isFlower(AHEAD)) {
-  hop();
-  pick();
-}
-else{ 
-turn(LEFT);
-}
-while (isFlower(AHEAD)) {
-hop();
-pick();
-}
-else{
-  turnAround();
-}
-while (isFlower(AHEAD)) {
-  hop();
-  pick();
-}
-while (isNet(AHEAD)) {
+while (!Flower(AHEAD)) {
   turn(LEFT);
+  }
+  else{
+    hop();
+    pick();
+  }
+while (!Net(AHEAD)){
+  hop();
 }
 else {
-  hop();
+  turn(LEFT);
 }
-
-    }
 
     // Do NOT touch the code below here
     public Jeroo() {super();}
