@@ -68,8 +68,21 @@ while (!isFacing(NORTH)){
      * no matter where it is or which way it is facing.
      */
     public void goToOrigin() {
+  while (!isFacing(NORTH)){
+  turn(LEFT);
+  }
+  while (!isWater(AHEAD)){
+    hop();
+  }
+  while (!isFacing(WEST)){
+  turn(LEFT);
+  }
+  while (!isWater(AHEAD)){
+    hop();
+  }
 
-    }
+
+
 
     /**
      * The Jeroo should follow the path of flowers until its end.  
@@ -77,13 +90,12 @@ while (!isFacing(NORTH)){
      * The Jeroo should stop as soon as there is a net in front of it.       
      */
     public void meander() {
-while (!Flower(AHEAD)) {
+while (!Net(AHEAD)){
+  while (!isFlower(AHEAD)) {
   turn(LEFT);
   }
   hop();
   pick();
-while (!Net(AHEAD)){
-  hop();
 }
 }
 
