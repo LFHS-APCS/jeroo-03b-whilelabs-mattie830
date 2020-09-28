@@ -80,16 +80,13 @@ while (!isFacing(NORTH)){
 while (!Flower(AHEAD)) {
   turn(LEFT);
   }
-  else{
-    hop();
-    pick();
-  }
+  hop();
+  pick();
 while (!Net(AHEAD)){
   hop();
 }
-else {
-  turn(LEFT);
 }
+
 
     // Do NOT touch the code below here
     public Jeroo() {super();}
